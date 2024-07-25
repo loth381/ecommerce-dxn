@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /api/
+Disallow: /private/
+Allow: /
+
+Sitemap: https://tu-sitio-web.com/sitemap.xml
