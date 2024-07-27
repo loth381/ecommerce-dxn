@@ -21,7 +21,6 @@ interface CarouselProductProps {
 const CarouselProduct = (props: CarouselProductProps) => {
   const { images } = props;
 
-  // Verificar que images y images.data están definidos y que images.data es un array
   const hasImages = Array.isArray(images?.data) && images.data.length > 0;
 
   return (
@@ -34,19 +33,19 @@ const CarouselProduct = (props: CarouselProductProps) => {
                 <img
                   src={`${image.attributes.url}`}
                   alt={`Product Image ${image.id}`}
-                  className="w-full h-auto object-cover rounded-lg"
-                  loading="lazy" 
+                  className="w-full h-80 object-cover rounded-lg shadow-lg transition-transform duration-300 ease-in-out transform hover:scale-105" // Cambiado: Tamaño aumentado y efecto hover
+                  loading="lazy"
                 />
               </CarouselItem>
             ))
           ) : (
-            <div className="w-full h-48 flex items-center justify-center bg-gray-200 rounded-lg"> {/* Cambiado: Contenedor estilizado para mensaje "No images available" */}
+            <div className="w-full h-48 flex items-center justify-center bg-gray-200 rounded-lg">
               <p className="text-gray-500">No images available</p>
             </div>
           )}
         </CarouselContent>
-        <CarouselPrevious className="hidden sm:flex sm:absolute sm:top-1/2 sm:-translate-y-1/2 sm:left-4 z-10" /> {/* Cambiado: Añadido z-10 para asegurar visibilidad sobre el contenido */}
-        <CarouselNext className="hidden sm:flex sm:absolute sm:top-1/2 sm:-translate-y-1/2 sm:right-4 z-10" /> {/* Cambiado: Añadido z-10 para asegurar visibilidad sobre el contenido */}
+        <CarouselPrevious className="hidden sm:flex sm:absolute sm:top-1/2 sm:-translate-y-1/2 sm:left-[-1] z-10" />
+        <CarouselNext className="hidden sm:flex sm:absolute sm:top-1/2 sm:-translate-y-1/2 sm:right-[-1] z-10" />
       </Carousel>
     </div>
   );

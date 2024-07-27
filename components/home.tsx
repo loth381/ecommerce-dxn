@@ -1,52 +1,34 @@
 "use client";
 
-import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
 const HomeBanner: React.FC = () => {
   const [current, setCurrent] = useState(0);
 
-  const router = useRouter()
+  const router = useRouter();
   const items = [
     {
-      name: "Gourmet Dishes",
-      description:
-        "Experience the best gourmet dishes crafted by our top chefs.",
-      imageUrl: "https://i.ibb.co/qCkd9jS/img1.jpg",
+      name: "Productos de Ganoderma",
+      description: "Descubre los beneficios del Ganoderma para tu salud.",
+      imageUrl: "/homedxn01.webp",
     },
     {
-      name: "Fine Dining",
-      description: "Enjoy a fine dining experience in a luxurious setting.",
-      imageUrl: "https://i.ibb.co/jrRb11q/img2.jpg",
+      name: "Afiliaciones DXN",
+      description: "Únete a nuestra red de afiliados y comienza tu propio negocio.",
+      imageUrl: "/homedxn02.webp",
     },
     {
-      name: "Exquisite Desserts",
-      description: "Indulge in our exquisite selection of desserts.",
-      imageUrl: "https://i.ibb.co/NSwVv8D/img3.jpg",
-    },
-    {
-      name: "Wine Selection",
-      description:
-        "Choose from a wide variety of wines to complement your meal.",
-      imageUrl: "https://i.ibb.co/Bq4Q0M8/img4.jpg",
-    },
-    {
-      name: "Cozy Ambiance",
-      description: "Relax in our cozy and inviting ambiance.",
-      imageUrl: "https://i.ibb.co/jTQfmTq/img5.jpg",
-    },
-    {
-      name: "Outdoor Seating",
-      description: "Enjoy your meal in our beautiful outdoor seating area.",
-      imageUrl: "https://i.ibb.co/RNkk6L0/img6.jpg",
+      name: "Plan de Marketing",
+      description: "Conoce nuestro plan de marketing y maximiza tus ganancias.",
+      imageUrl: "/homedxn03.webp",
     },
   ];
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrent((prev) => (prev === items.length - 1 ? 0 : prev + 1));
-    }, 5000);
+    }, 4000);
 
     return () => clearInterval(interval);
   }, [current]);
@@ -64,33 +46,33 @@ const HomeBanner: React.FC = () => {
       {items.map((item, index) => (
         <div
           key={index}
-          className={`absolute w-full h-full bg-cover bg-center transition-opacity duration-500 ${
+          className={`absolute w-full h-full bg-cover bg-center transition-opacity duration-700 ${
             current === index ? "opacity-100" : "opacity-0"
           }`}
           style={{ backgroundImage: `url(${item.imageUrl})` }}
         >
           <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center text-center text-white p-4">
-            <h2 className="text-4xl md:text-6xl font-bold">{item.name}</h2>
-            <p className="mt-4 text-lg md:text-2xl">{item.description}</p>
-            <button onClick={() => router.push("/allproducts")} className="mt-8 px-6 py-3 bg-yellow-500 text-black font-semibold rounded-lg shadow-lg hover:bg-yellow-600 transition duration-300">
-              Pedir
+            <h2 className="text-4xl md:text-6xl font-bold shadow-md">{item.name}</h2>
+            <p className="mt-4 text-lg md:text-2xl shadow-md">{item.description}</p>
+            <button
+              onClick={() => router.push("/allproducts")}
+              className="mt-8 px-8 py-3 bg-gradient-to-r bg-slate-900 text-white font-semibold rounded-lg shadow-lg hover:shadow-2xl transform hover:scale-105 transition-transform duration-300"
+            >
+              Comprar
             </button>
           </div>
         </div>
       ))}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-4">
-        <button
-          className="p-2 bg-gray-300 rounded-full hover:bg-gray-400 transition duration-300"
-          onClick={prevSlide}
-        >
-          <ArrowLeft className="text-black" />
-        </button>
-        <button
-          className="p-2 bg-gray-300 rounded-full hover:bg-gray-400 transition duration-300"
-          onClick={nextSlide}
-        >
-          <ArrowRight className="text-black" />
-        </button>
+      
+      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+        {items.map((_, index) => (
+          <div
+            key={index}
+            className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              current === index ? "bg-slate-900" : "bg-gray-300"
+            }`}
+          />
+        ))}
       </div>
     </div>
   );

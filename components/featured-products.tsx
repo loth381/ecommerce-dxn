@@ -6,6 +6,7 @@ import { useCart } from "@/hooks/use-cart";
 import { ProductType } from "@/types/product";
 import { ResponseType } from "@/types/response";
 import { Expand, ShoppingCart } from "lucide-react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import IconButton from "./icon-button";
 import SkeletonSchema from "./skeletonSchema";
@@ -34,13 +35,17 @@ const FeacturedProducts = () => {
                 >
                   <div className="p-1">
                     <Card className="py-4 border border-gray-200 shadow-none">
-                      <CardContent className="relative flex items-center justify-center px-6 py-2">
+                      <CardContent  className="relative flex items-center justify-center px-5 py-4">
                       {images?.data?.[0]?.attributes?.url ? (
+                        <Link
+                        href={`/product/${product.attributes.slug}`}
+                        >
                           <img
                             src={`${images.data[0].attributes.url}`}
                             alt={productName || "Imagen destacada del producto"}
                             className="fixed-size-image transition duration-300 ease-in-out "
                           />
+                          </Link>
                         ) : (
                           <p>No image available</p>
                         )}
@@ -59,16 +64,16 @@ const FeacturedProducts = () => {
                           </div>
                         </div>
                       </CardContent>
-                      <div className="flex justify-between gap-4 px-8">
+                      <div className="flex justify-between gap-4 px-6">
                         <h3 className="text-lg font-bold">{productName}</h3>
                         <div className="flex items-center justify-between gap-3">
                         {taste && (
-                            <p className="px-2 py-1 text-white bg-black rounded-full dark:bg-white dark:text-black w-fit">
+                            <p className="px-2 text-sm py-1 text-white bg-black rounded-full dark:bg-white dark:text-black w-fit">
                               {taste}
                             </p>
                           )}
                           {origin && (
-                            <p className="px-2 py-1 text-white bg-yellow-900 rounded-full w-fit">
+                            <p className="px-2 py-1 text-sm text-white bg-yellow-900 rounded-full w-fit">
                               {origin}
                             </p>
                           )}

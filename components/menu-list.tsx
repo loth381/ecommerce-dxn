@@ -18,19 +18,10 @@ import { cn } from "@/lib/utils"
 const components: { title: string; href: string; description: string }[] = [
   {
     title: "Café en grano",
-    href: "/category/grano",
+    href: "/afiliacion",
     description: "Descubre nuestra selección de café en grano para una frescura incomparable.", // Descripción mejorada para SEO
   },
-  {
-    title: "Café molido",
-    href: "/category/molido",
-    description: "Encuentra café molido listo para preparar y disfrutar.", // Descripción mejorada para SEO
-  },
-  {
-    title: "Café en cápsulas",
-    href: "/category/capsula",
-    description: "Conveniencia y sabor en cada cápsula para una experiencia rápida y deliciosa.", // Descripción mejorada para SEO
-  },
+  
 ];
 
 const MenuList = () => {
@@ -38,7 +29,7 @@ const MenuList = () => {
     <NavigationMenu>
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Sobre nosotros</NavigationMenuTrigger>
+          <NavigationMenuTrigger className="text-[15px]">Productos</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
               <li className="row-span-3">
@@ -49,8 +40,8 @@ const MenuList = () => {
                     aria-label="Learn more about us"
                   >
                    
-                    <div className="mb-2 mt-4 text-lg font-medium">
-                      Avendaño
+                    <div className="mb-2 mt-4 text-lg font-bold">
+                      DXN 
                     </div>
                     <p className="text-sm leading-tight text-muted-foreground">
                       Sumergete en el apasionado mundo del cafe con nuestra pagina web de grano, molido, de capsula y de leche.
@@ -59,19 +50,23 @@ const MenuList = () => {
                 </NavigationMenuLink>
               </li>
               <ListItem href="/allproducts" title="Tienda">
-              Accede  a toda tu informacion,tus pedidos y mucho mas.
+              Accede a toda nuestra gama de productos.
               </ListItem>
-              <ListItem href="/offers" title="Ofertas">
-                Seccion dedicada a promociones y descuentos especiales
+              <ListItem href="/category/jugos" title="Jugos">
+              Explora nuestra variedad de jugos DXN
               </ListItem>
-              <ListItem href="/" title="Accesorios">
-                Productos complemtarios como tazas,molinillos,etc
+              <ListItem href="/category/mascarillas" title="Mascarillas">
+              Descubre productos de cuidado de la piel con DXN
               </ListItem>
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Cafes</NavigationMenuTrigger>
+        <Link href="/afiliacion" legacyBehavior passHref>
+            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+           <span className="text-[15px]">Afíliate</span> 
+            </NavigationMenuLink>
+          </Link>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
               {components.map((component) => (
@@ -87,9 +82,9 @@ const MenuList = () => {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <Link href="/accesorios" legacyBehavior passHref>
+          <Link href="/nosotros" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Accesorios
+             <span className="text-[15px]">Sobre nosotros</span>  
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>

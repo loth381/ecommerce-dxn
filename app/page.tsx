@@ -4,7 +4,7 @@ import CarouselTextBanner from "@/components/carousel-text-banner";
 import ChooseCategory from "@/components/choose-category";
 import FeacturedProducts from "@/components/featured-products";
 import HomeBanner from "@/components/home";
-import ImageCarousel from "@/components/ImageSlider";
+import SocialMediaVideos from "@/components/SocialMediaVideos";
 
 
 
@@ -17,7 +17,7 @@ export default function Home() {
       <BannerDiscount />
       <ChooseCategory />
       <BannerProduct />
-     <ImageCarousel />
+     <SocialMediaVideos />
     </main>
   );
 }

@@ -12,14 +12,21 @@ const ItemsMenuMobile = () => {
         <Menu size={24} />
       </PopoverTrigger>
       <PopoverContent className="w-48 bg-white dark:bg-gray-800 shadow-lg rounded-md p-4">
-        <Link href="/categories/cafe-molido" className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md">
-          Cafe molido
+      <h1 className="text-center py-2 font-bold">centro de servicio Huamanga</h1>
+        <Link href="/allproducts" className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md">
+          Tienda
         </Link>
-        <Link href="/categories/cafe-grano" className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md">
-          Cafe en granos
+        <Link href="/category/jugos" className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md">
+          Jugos
         </Link>
-        <Link href="/categories/cafe-capsula" className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md">
-          Cafe en capsulas
+        <Link href="/category/mascarillas" className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md">
+          Mascarillas
+        </Link>
+        <Link href="/afiliacion" className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md">
+          Afiliate
+        </Link>
+        <Link href="/nosotros" className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md">
+          Sobre nosotros
         </Link>
       </PopoverContent>
     </Popover>
