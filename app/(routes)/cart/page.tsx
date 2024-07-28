@@ -42,16 +42,9 @@ export default function Page() {
     const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
     window.open(whatsappLink, "_blank");
+    removeAll();
   };
 
-  // const handlePurchase = () => {
-  //   const productDetails = items.map((item) => `- ${item.attributes.name}: ${formatPrice(item.attributes.price)}`).join("\n");
-  //   const message = `Hola, me gustaría comprar los siguientes productos:\n\n${productDetails}\n\nTotal: ${formatPrice(totalPrice)}`;
-  //   const phoneNumber = "51930134408"; // Reemplaza con tu número de WhatsApp
-  //   const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-
-  //   window.open(whatsappLink, "_blank");
-  // };
   return (
     <div className=" max-w-6xl px-4 py-16 mx-auto sm:px-6 lg:px-8">
       <h1 className="mb-5 text-3xl font-bold">Cart</h1>
@@ -72,11 +65,11 @@ export default function Page() {
             <p className="font-medium dark:text-slate-900">Total del Pedido:</p> 
             <p className="font-bold dark:text-slate-900" >{formatPrice(totalPrice)}</p> 
             </div>
-            <div className="flex items-center justify-center w-full mt-3">
+            {/* <div className="flex items-center justify-center w-full mt-3">
               <Button className="w-full dark:bg-slate-900 dark:text-white" onClick={buyStripe}>
                 Comprar
               </Button>
-            </div>
+            </div> */}
             <div className="flex items-center justify-center w-full mt-3">
               <Button className="w-full flex items-center justify-center dark:bg-slate-900 dark:text-white" onClick={handleWhatsApp}>
                 <FaWhatsapp className="mr-2" /> Contactar por WhatsApp

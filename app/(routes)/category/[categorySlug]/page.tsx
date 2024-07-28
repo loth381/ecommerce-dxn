@@ -25,10 +25,10 @@ export default function Page() {
     : [];
 
   return (
-    <div className="max-w-6xl py-4 mx-auto sm:py-16 sm:px-24">
+    <div className="max-w-6xl py-4 px-1  mx-auto sm:py-16 sm:px-24">
       {result && Array.isArray(result) && result.length > 0 && !loading && (
-        <h1 className="text-2xl font-medium">
-          Cafe {result[0].attributes.category.data.attributes.categoryName}
+        <h1 className="text-5xl px-5 font-bold">
+          {result[0].attributes.category.data.attributes.categoryName}
         </h1>
       )}
       <Separator />

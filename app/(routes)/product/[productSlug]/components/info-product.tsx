@@ -44,17 +44,17 @@ const InfoProduct = (props: InfoProductProps) => {
   return (
     <div className="px-4 sm:px-6">
       <div className="flex flex-col sm:flex-row justify-between mb-3">
-        <h1 className="text-2xl sm:text-3xl font-semibold">
+        <h1 className="text-2xl sm:text-4xl font-semibold">
           {product.attributes.productName}
         </h1>
-        <div className="flex items-center justify-between gap-2 sm:gap-3">
+        {/* <div className="flex items-center justify-between gap-2 sm:gap-3">
           <p className="px-2 py-1 text-xs text-white bg-black rounded-full dark:bg-white dark:text-black w-fit">
             {product.attributes.taste}
           </p>
           <p className="px-2 py-1 text-xs bg-yellow-900 rounded-full w-fit text-white">
             {product.attributes.origin}
           </p>
-        </div>
+        </div> */}
       </div>
       <Separator className="my-4" />
       <p>{product.attributes.description}</p>

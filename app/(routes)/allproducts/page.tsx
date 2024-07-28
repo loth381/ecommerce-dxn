@@ -22,8 +22,8 @@ export default function AllProductsPage() {
       : [];
   
     return (
-      <div className="max-w-6xl py-4 mx-auto sm:py-16 sm:px-24">
-        <h1 className="text-2xl font-medium">Todos los Productos</h1>
+      <div className="max-w-6xl py-4 px-1 mx-auto sm:py-16 sm:px-24">
+        <h1 className="lg:text-5xl text-2xl lg:text-left text-center font-medium">Todos los Productos</h1>
         <Separator />
   
         <div className="sm:flex sm:justify-between">

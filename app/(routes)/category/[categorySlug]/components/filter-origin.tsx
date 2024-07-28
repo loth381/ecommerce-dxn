@@ -13,14 +13,14 @@ const FilterOrigin = (props: FiltersOriginProps) => {
 
   return (
     <div className="my-5">
-      <p className="mb-3 text-lg font-semibold">Origen</p>
+      <p className="mb-3 text-lg font-bold">Productos</p>
       {loading && result === null && <p className="text-gray-500">Cargando origen...</p>}
       
       <RadioGroup onValueChange={(value) => setFilterOrigin(value)}>
         {/* Opción para mostrar todos los productos */}
         <div className="flex items-center space-x-2 mb-2">
           <RadioGroupItem value="" id="all" />
-          <Label htmlFor="all" className="cursor-pointer">
+          <Label htmlFor="all" className="cursor-pointer font-semibold text-[15px] hover:text-red-500">
             Todos
           </Label>
         </div>
@@ -28,8 +28,8 @@ const FilterOrigin = (props: FiltersOriginProps) => {
         {result !== null && result.schema.attributes.origin.enum.length > 0 ? (
           result.schema.attributes.origin.enum.map((origin: string) => (
             <div key={origin} className="flex items-center space-x-2 mb-2">
-              <RadioGroupItem value={origin} id={origin} />
-              <Label htmlFor={origin} className="cursor-pointer">
+              <RadioGroupItem  value={origin} id={origin} />
+              <Label htmlFor={origin} className="cursor-pointer font-semibold text-[15px] hover:text-red-500">
                 {origin}
               </Label>
             </div>
