@@ -38,8 +38,7 @@ export default function Page() {
           )}
         </div>
 
-        <div className="sm:px-12">
-          {/* Cambiado: Asegurarse de que el producto tenga atributos antes de renderizar InfoProduct */}
+        <div className="sm:px-1">
           {product.attributes ? (
             <InfoProduct product={product} />
           ) : (
