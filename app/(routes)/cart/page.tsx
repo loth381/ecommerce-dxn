@@ -72,7 +72,7 @@ export default function Page() {
             </div> */}
             <div className="flex items-center justify-center w-full mt-3">
               <Button className="w-full flex items-center justify-center dark:bg-slate-900 dark:text-white" onClick={handleWhatsApp}>
-                <FaWhatsapp className="mr-2" /> Contactar por WhatsApp
+                <FaWhatsapp className="mr-2"/> Contactar por WhatsApp
               </Button>
             </div>
           </div>
