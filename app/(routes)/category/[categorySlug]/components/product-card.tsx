@@ -36,7 +36,7 @@ const ProductCard = (props: ProductCardProps) => {
       </div> */}
       <Carousel
         opts={{ align: "start" }}
-        className="w-full max-w-[1200px] sm:max-w-2xl lg:max-w-4xl overflow-hidden rounded-lg mx-auto"
+        className="w-full max-w-[1200px] sm:max-w-2xl lg:max-w-4xl overflow-hidden rounded-lg mx-auto "
       >
         <CarouselContent>
           {images.length > 0 ? (
@@ -45,7 +45,7 @@ const ProductCard = (props: ProductCardProps) => {
                 <img
                   src={`${image.attributes.url}`}
                   alt={product.attributes.productName}
-                  className="w-full  h-72 lg:h-64 object-cover rounded-xl transition-transform duration-300 group-hover:scale-105"
+                  className="w-full  h-80 lg:h-64 object-cover rounded-xl transition-transform duration-300 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black bg-opacity-50 rounded-xls">
                   <div className="flex justify-center gap-x-6">
