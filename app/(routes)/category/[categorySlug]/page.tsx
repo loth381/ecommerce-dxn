@@ -2,6 +2,7 @@
 
 import { useGetCategoryProducts } from "@/api/getCategoryProduct";
 import { useSearchProducts } from "@/api/useSearchProducts";
+import CarouselTextBanner from "@/components/carousel-text-banner";
 import SkeletonSchema from "@/components/skeletonSchema";
 import { Separator } from "@/components/ui/separator";
 import { ProductType } from "@/types/product";
@@ -31,6 +32,8 @@ export default function Page() {
   const displayedProducts = query ? searchResult : filteredProducts;
 
   return (
+    <>
+    <CarouselTextBanner/>
     <div className="max-w-6xl py-4 px-1 mx-auto sm:py-16 sm:px-24">
       {result && Array.isArray(result) && result.length > 0 && !loading && (
         <h1 className="text-5xl px-5 font-bold py-5">
@@ -68,5 +71,6 @@ export default function Page() {
         </div>
       </div>
     </div>
+    </>
   );
 }

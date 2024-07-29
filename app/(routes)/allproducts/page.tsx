@@ -6,6 +6,7 @@ import { Separator } from "@/components/ui/separator";
 import { ProductType } from "@/types/product";
 
 import { useSearchProducts } from "@/api/useSearchProducts";
+import CarouselTextBanner from "@/components/carousel-text-banner";
 import { Search } from "lucide-react";
 import { useState } from "react";
 import FiltersControlsCategory from "../category/[categorySlug]/components/filters-controls-category";
@@ -29,6 +30,8 @@ export default function AllProductsPage() {
       
   const displayedProducts = query ? searchResult : filteredProducts;
   return (
+    <>
+    <CarouselTextBanner/>
     <div className="max-w-6xl py-4 px-1 mx-auto sm:py-16 sm:px-24">
       <h1 className="lg:text-5xl py-5 text-2xl lg:text-left text-center font-medium">
         Todos los Productos
@@ -66,5 +69,6 @@ export default function AllProductsPage() {
         </div>
       </div>
     </div>
+    </>
   );
 }
