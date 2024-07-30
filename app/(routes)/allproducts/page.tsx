@@ -8,16 +8,30 @@ import { ProductType } from "@/types/product";
 import { useSearchProducts } from "@/api/useSearchProducts";
 import CarouselTextBanner from "@/components/carousel-text-banner";
 import { Search } from "lucide-react";
-import { useState } from "react";
+import Head from "next/head";
+import { useEffect, useState } from "react";
 import FiltersControlsCategory from "../category/[categorySlug]/components/filters-controls-category";
 import ProductCard from "../category/[categorySlug]/components/product-card";
 
 export default function AllProductsPage() {
   const { result, loading } = useGetAllProducts();
   const [filterOrigin, setFilterOrigin] = useState("");
-  const [query, setQuery] = useState(""); // Estado para el término de búsqueda
+  const [query, setQuery] = useState("");
+  const [debouncedQuery, setDebouncedQuery] = useState(query); // Estado para el término de búsqueda
   const { result: searchResult, loading: searchLoading } =
     useSearchProducts(query); // Hook de búsqueda mejorado
+
+    
+
+    useEffect(() => {
+      const handler = setTimeout(() => {
+        setDebouncedQuery(query);
+      }, 300);
+  
+      return () => {
+        clearTimeout(handler);
+      };
+    }, [query]);
 
   const filteredProducts =
     !loading && result
@@ -31,14 +45,22 @@ export default function AllProductsPage() {
   const displayedProducts = query ? searchResult : filteredProducts;
   return (
     <>
+    <Head>
+        <title>Todos los Productos - DXN</title>
+        <meta name="description" content="Explora todos los productos disponibles de DXN. Encuentra productos de calidad y beneficios exclusivos." />
+        <meta name="keywords" content="productos, DXN, salud, bienestar, no-code" />
+        <meta name="robots" content="index, follow" />
+      </Head>
     <CarouselTextBanner/>
     <div className="max-w-6xl py-4 px-1 mx-auto sm:py-16 sm:px-24">
       <h1 className="lg:text-5xl py-5 text-2xl lg:text-left text-center font-medium">
         Todos los Productos
       </h1>
       <div className="mt-4 sm:mt-0 sm:ml-4 flex items-center">
+      <label htmlFor="search" className="sr-only">Buscar productos</label>
         <div className="relative w-full">
           <input
+            id="search" 
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)} // Actualizar el término de búsqueda

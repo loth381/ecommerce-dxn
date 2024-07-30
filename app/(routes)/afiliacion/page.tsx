@@ -1,5 +1,6 @@
 "use client";
 
+import Head from "next/head";
 import BestBusiness from "./BestBusiness";
 import ContactForm from "./ContactForm";
 import Mapa from "./mapa";
@@ -8,7 +9,18 @@ import Video from "./video";
 export default function AffiliatePage() {
   return (
 
-    
+    <>
+    <Head>
+        <title>Afíliate a DXN | DXN Ayacucho</title>
+        <meta name="description" content="Únete a DXN Ayacucho y disfruta de los beneficios de ser un afiliado. Rellena el formulario y contáctanos para más información." />
+        <meta name="robots" content="index, follow" />
+        <meta property="og:title" content="Afíliate a DXN | DXN Ayacucho" />
+        <meta property="og:description" content="Únete a DXN Ayacucho y disfruta de los beneficios de ser un afiliado. Rellena el formulario y contáctanos para más información." />
+        <meta property="og:url" content="https://dxnayacucho.vercel.app/afiliacion" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://dxnayacucho.vercel.app/bannerdxn.jpg" />
+      </Head>
+   
     <div className="relative bg-gray-100 py-0 px-0 md:px-16 md:py-20 dark:bg-slate-900">
       <BestBusiness />
       <Video/>
@@ -92,5 +104,6 @@ export default function AffiliatePage() {
       </div>
       <Mapa/>
     </div>
+    </>
   );
 }

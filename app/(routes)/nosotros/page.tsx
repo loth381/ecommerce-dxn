@@ -1,9 +1,19 @@
+import Head from "next/head";
 import Image from "next/image";
 import FondoAbout from "./components/fonto";
 import Mienbros from "./components/mienbros";
 
 export default function Page() {
   return (
+    <>
+    <Head>
+        <title>Sobre Nosotros | DXN Ayacucho</title>
+        <meta name="description" content="Conoce más sobre Zeroqode, pioneros en la revolución no-code, entregando más de 300 proyectos y 651 plugins desde 2016." />
+        <meta name="robots" content="index, follow" />
+        <meta property="og:title" content="Sobre Nosotros | DXN Ayacucho" />
+        <meta property="og:description" content="Conoce más sobre Zeroqode, pioneros en la revolución no-code, entregando más de 300 proyectos y 651 plugins desde 2016." />
+        <meta property="og:image" content="https://dxnayacucho.vercel.app/categorias03.jpeg" />
+      </Head>
     <div>
       <div className="px-4 md:px-16 lg:px-36 lg:py-52 py-16 mx-auto flex justify-around flex-col lg:flex-row items-center gap-8">
         <div className="flex-1 max-w-md">
@@ -30,5 +40,6 @@ export default function Page() {
       <FondoAbout />
       <Mienbros/>
     </div>
+    </>
   );
 }

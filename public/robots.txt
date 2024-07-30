@@ -1,6 +1,5 @@
 User-agent: *
-Disallow: /api/
 Disallow: /private/
 Allow: /
 
-Sitemap: https://tu-sitio-web.com/sitemap.xml
+Sitemap: https://dxnayacucho.vercel.app/sitemap.xml

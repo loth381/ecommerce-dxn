@@ -1,4 +1,5 @@
 import Footer from "@/components/footer";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 import Navbar from "@/components/navbar";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/toaster";
@@ -10,22 +11,22 @@ import "./globals.css";
 const urbanist = Urbanist({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Avendaño | DXN",
-  description: "Bienvenido a Avendaño venta de productos de DXN",
+  title: "DXN Ayacucho | Productos de Salud y Bienestar",
+  description: "Bienvenido a DXN Ayacucho. Descubre nuestra gama de productos de salud y bienestar. Únete a nuestra red de afiliados y mejora tu calidad de vida.",
   openGraph: {
-    title: "Avendaño | DXN",
-    description: "Bienvenido a Cafetería Avendaño, tu destino para café fresco y deliciosas golosinas. Disfruta de una experiencia única en un ambiente acogedor.",
-    url: "https://your-domain.com", // Reemplaza con tu dominio real
+    title: "DXN Ayacucho | Productos de Salud y Bienestar",
+    description: "Bienvenido a DXN Ayacucho. Descubre nuestra gama de productos de salud y bienestar. Únete a nuestra red de afiliados y mejora tu calidad de vida.",
+    url: "https://dxnayacucho.vercel.app/",
     images: [
       {
-        url: "https://your-domain.com/og-image.jpg", // Reemplaza con la URL de tu imagen Open Graph
+        url: "https://dxnayacucho.vercel.app/bannerdxn.jpg",
         width: 1200,
         height: 630,
-        alt: "Café fresco y deliciosas golosinas en Cafetería Avendaño",
+        alt: "Productos de salud y bienestar en DXN Ayacucho",
       },
     ],
-    siteName: "Cafetería Avendaño",
-    locale: "es_ES", // Establece la localización para Open Graph
+    siteName: "DXN Ayacucho",
+    locale: "es_ES",
   },
 };
 
@@ -39,25 +40,67 @@ export default function RootLayout({
       <head>
         <meta name="robots" content="index, follow" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta property="og:title" content="Cafetería Avendaño | Café y Delicias" />
-        <meta property="og:description" content="Bienvenido a Cafetería Avendaño, tu destino para café fresco y deliciosas golosinas. Disfruta de una experiencia única en un ambiente acogedor." />
-        <meta property="og:url" content="https://your-domain.com" />
-        <meta property="og:image" content="https://your-domain.com/og-image.jpg" />
+        <link rel="canonical" href="https://dxnayacucho.vercel.app/" />
+        <link rel="icon" href="/favicon.ico" />
+        <meta
+          property="og:title"
+          content="DXN Ayacucho | Productos de Salud y Bienestar"
+        />
+        <meta
+          property="og:description"
+          content="Bienvenido a DXN Ayacucho. Descubre nuestra gama de productos de salud y bienestar. Únete a nuestra red de afiliados y mejora tu calidad de vida."
+        />
+        <meta property="og:url" content="https://dxnayacucho.vercel.app" />
+        <meta
+          property="og:image"
+          content="https://dxnayacucho.vercel.app/bannerdxn.jpg"
+        />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta property="og:site_name" content="Cafetería Avendaño" />
+        <meta property="og:site_name" content="DXN Ayacucho" />
         <meta property="og:locale" content="es_ES" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@tuTwitterHandle" />
-        <meta name="twitter:title" content="Cafetería Avendaño | Café y Delicias" />
-        <meta name="twitter:description" content="Bienvenido a Cafetería Avendaño, tu destino para café fresco y deliciosas golosinas. Disfruta de una experiencia única en un ambiente acogedor." />
-        <meta name="twitter:image" content="https://your-domain.com/twitter-image.jpg" />
-        <meta property="fb:page_id" content="tuFacebookPageID" /> {/* Opcional, reemplaza con tu ID de página de Facebook */}
-        <meta property="og:type" content="website" /> {/* Especifica el tipo de contenido */}
-        <meta property="og:updated_time" content={new Date().toISOString()} /> {/* Fecha de la última actualización */}
-        <link rel="icon" href="/favicon.ico" />
+        <meta
+          name="twitter:title"
+          content="DXN Ayacucho | Productos de Salud y Bienestar"
+        />
+        <meta
+          name="twitter:description"
+          content="Bienvenido a DXN Ayacucho. Descubre nuestra gama de productos de salud y bienestar. Únete a nuestra red de afiliados y mejora tu calidad de vida."
+        />
+        <meta
+          name="twitter:image"
+          content="https://your-domain.com/twitter-image.jpg"
+        />
+        <meta property="fb:page_id" content="tuFacebookPageID" />
+        <meta property="og:type" content="website" />
+        <meta property="og:updated_time" content={new Date().toISOString()} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "DXN Ayacucho | Productos de Salud y Bienestar",
+              url: "https://dxnayacucho.vercel.app/",
+              logo: "https://dxnayacucho.vercel.app/favicon.ico",
+              contactPoint: {
+                "@type": "ContactPoint",
+                telephone: "+51 930 134 408",
+                contactType: "Customer Service",
+              },
+              sameAs: [
+                "https://www.facebook.com/profile.php?id=100077437129801",
+                "https://wa.me/51930134408",
+              ],
+            }),
+          }}
+        />
+        
       </head>
       <body className={urbanist.className}>
+      <GoogleAnalytics />
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
