@@ -24,7 +24,7 @@ const posts = [
   },
   {
     id: 2,
-    video: "https://www.youtube.com/embed/FY0R7KsBC2g",
+    video: "",
     title: "AM VS PM WELLNESS",
     content: [
       "CoQ10 to support your natural energy",
@@ -35,7 +35,7 @@ const posts = [
   {
     id: 3,
     video:
-      "https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/reel/1249047225965081",
+      "",
     title: "Signs you need to start using Rosemary shampoo",
   },
   {
@@ -47,7 +47,7 @@ const posts = [
   },
   {
     id: 5, // Cambié el ID aquí para evitar duplicados
-    video: "https://www.youtube.com/embed/FY0R7KsBC2g",
+    video: "",
     title: "AM VS PM WELLNESS",
     content: [
       "CoQ10 to support your natural energy",
@@ -58,7 +58,7 @@ const posts = [
   {
     id: 6, // Cambié el ID aquí para evitar duplicados
     video:
-      "https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/reel/854918129304311",
+      "",
     title: "Signs you need to start using Rosemary shampoo",
   },
 ];
