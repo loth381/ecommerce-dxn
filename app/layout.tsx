@@ -61,6 +61,7 @@ export default function RootLayout({
         <meta property="og:locale" content="es_ES" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@tuTwitterHandle" />
+        <meta name="google-site-verification" content="s7rwNtOiZLTsTJkm10Dj-B1CNfnpkSjX7iDkXcjEVF4" />
         <meta
           name="twitter:title"
           content="DXN Ayacucho | Productos de Salud y Bienestar"
