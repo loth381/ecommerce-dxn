@@ -1,26 +1,17 @@
 "use client";
 
-import Head from "next/head";
 import BestBusiness from "./BestBusiness";
 import ContactForm from "./ContactForm";
 import Mapa from "./mapa";
 import Video from "./video";
 
 export default function AffiliatePage() {
+  const openMailClient = () => {
+    window.open('https://mail.google.com/mail/?view=cm&fs=1&to=u19217724@gmail.com', '_blank');
+  };
   return (
 
     <>
-    <Head>
-        <title>Afíliate a DXN | DXN Ayacucho</title>
-        <meta name="description" content="Únete a DXN Ayacucho y disfruta de los beneficios de ser un afiliado. Rellena el formulario y contáctanos para más información." />
-        <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="Afíliate a DXN | DXN Ayacucho" />
-        <meta property="og:description" content="Únete a DXN Ayacucho y disfruta de los beneficios de ser un afiliado. Rellena el formulario y contáctanos para más información." />
-        <meta property="og:url" content="https://dxnayacucho.vercel.app/afiliacion" />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://dxnayacucho.vercel.app/bannerdxn.jpg" />
-      </Head>
-   
     <div className="relative bg-gray-100 py-0 px-0 md:px-16 md:py-20 dark:bg-slate-900">
       <BestBusiness />
       <Video/>
@@ -37,21 +28,21 @@ export default function AffiliatePage() {
           </p>
           <p className="text-gray-800 mb-2 dark:text-slate-100">
             <strong>Email:</strong>{" "}
-            <a href="mailto:contacto@dxn.com.pe" className="underline dark:text-slate-100">
-              contacto@dxn.com.pe
+            <a href="javascript:void(0);"  className="underline dark:text-slate-100" onClick={openMailClient} rel="noopener noreferrer">
+              u19217724@gmail.com
             </a>
           </p>
           <p className="text-gray-800 mb-2 dark:text-slate-100">
             <strong>WhatsApp:</strong>{" "}
-            <a href="https://wa.me/5112345678" className="underline">
-              +51 1 234 5678
+            <a href="https://wa.me/51930134408" className="underline" target="_blank" rel="noopener noreferrer"  >
+               930 134 408
             </a>
           </p>
           <p className="text-gray-800 mb-2 dark:text-slate-100">
-            <strong>Teléfono:</strong> +51 1 234 5678
+            <strong>Teléfono:</strong>930 134 408
           </p>
           <p className="text-gray-800 mb-2 dark:text-slate-100">
-            <strong>Dirección:</strong> Av. Ejemplo 123, Lima, Perú
+            <strong>Dirección:</strong> Andres Avelino Caceres, Calle lince 124 - Ayacucho
           </p>
           <div className="mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             <div>
@@ -75,16 +66,15 @@ export default function AffiliatePage() {
             </div>
             <div>
               <h2 className="text-2xl font-semibold mb-2 text-gray-800 dark:text-slate-100">
-                Consultas de Medios
+                Consultas del Producto
               </h2>
               <p className="text-gray-600 dark:text-slate-100">
-                Para consultas relacionadas con los medios o preguntas de
-                prensa, por favor contáctanos en{" "}
+                Para consultas relacionadas con los Productos por favor contáctanos en{" "}
                 <a
-                  href="mailto:media@dxn.com.pe"
-                  className="underline text-blue-500 hover:text-blue-600"
+                  href="mailto:u19217724@gmail.com"
+                  className="underline text-red-700 hover:text-blue-600" onClick={openMailClient} rel="noopener noreferrer"
                 >
-                  media@dxn.com.pe
+                  u19217724@gmail.com
                 </a>
               </p>
             </div>

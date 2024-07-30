@@ -9,8 +9,8 @@ const Miembros = () => {
     return (
         <div className="py-32 ">
             <div className="text-center mb-12">
-                <h1 className="font-bold text-5xl py-4 text-red-600">Who is Behind the Magic?</h1>
-                <p className="text-3xl text-gray-700">Our Team</p>
+                <h1 className="font-bold text-5xl py-4 text-red-600">Nuestro Equipo</h1>
+                <p className="text-3xl text-gray-700">Team</p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 px-5 md:px-10 lg:px-20">
                 {miembrosData.map((miembro) => (

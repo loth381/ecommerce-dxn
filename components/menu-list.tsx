@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import * as React from "react"
+import Link from "next/link";
+import * as React from "react";
 
 import {
   NavigationMenu,
@@ -11,17 +11,16 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu"
-import { cn } from "@/lib/utils"
+} from "@/components/ui/navigation-menu";
+import { cn } from "@/lib/utils";
 
 // Datos de los componentes del menú con descripciones mejoradas para SEO
 const components: { title: string; href: string; description: string }[] = [
   {
-    title: "Café en grano",
-    href: "/afiliacion",
-    description: "Descubre nuestra selección de café en grano para una frescura incomparable.", // Descripción mejorada para SEO
+    title: "",
+    href: "",
+    description: "", // Descripción mejorada para SEO
   },
-  
 ];
 
 const MenuList = () => {
@@ -29,7 +28,9 @@ const MenuList = () => {
     <NavigationMenu>
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuTrigger className="text-[15px]">Productos</NavigationMenuTrigger>
+          <NavigationMenuTrigger className="text-[15px]">
+            Productos
+          </NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
               <li className="row-span-3">
@@ -39,32 +40,31 @@ const MenuList = () => {
                     href="/"
                     aria-label="Learn more about us"
                   >
-                   
-                    <div className="mb-2 mt-4 text-lg font-bold">
-                      DXN 
-                    </div>
+                    <div className="mb-2 mt-4 text-lg font-bold">DXN</div>
                     <p className="text-sm leading-tight text-muted-foreground">
-                      Sumergete en el apasionado mundo del cafe con nuestra pagina web de grano, molido, de capsula y de leche.
+                      Descubre DXN y sus productos de salud y bienestar. Únete a
+                      nuestra afiliación y crece personal y profesionalmente
+                      compartiendo lo que amas.
                     </p>
                   </a>
                 </NavigationMenuLink>
               </li>
               <ListItem href="/allproducts" title="Tienda">
-              Accede a toda nuestra gama de productos.
+                Accede a toda nuestra gama de productos.
               </ListItem>
               <ListItem href="/category/jugos" title="Jugos">
-              Explora nuestra variedad de jugos DXN
+                Explora nuestra variedad de jugos DXN
               </ListItem>
               <ListItem href="/category/mascarillas" title="Mascarillas">
-              Descubre productos de cuidado de la piel con DXN
+                Descubre productos de cuidado de la piel con DXN
               </ListItem>
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-        <Link href="/afiliacion" legacyBehavior passHref>
+          <Link href="/afiliacion" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-           <span className="text-[15px]">Afíliate</span> 
+              <span className="text-[15px]">Afíliate</span>
             </NavigationMenuLink>
           </Link>
           <NavigationMenuContent>
@@ -84,16 +84,28 @@ const MenuList = () => {
         <NavigationMenuItem>
           <Link href="/nosotros" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-             <span className="text-[15px]">Sobre nosotros</span>  
+              <span className="text-[15px]">Sobre nosotros</span>
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
+
+        <NavigationMenuItem>
+        <NavigationMenuLink asChild>
+            <Link
+              href="https://maps.app.goo.gl/CsGzxqkLPMfAwMy66"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span className="text-[15px]">Local</span>
+            </Link>
+          </NavigationMenuLink>
+        </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>
-  )
-}
+  );
+};
 
-export default MenuList
+export default MenuList;
 
 const ListItem = React.forwardRef<
   React.ElementRef<"a">,
@@ -117,9 +129,6 @@ const ListItem = React.forwardRef<
         </a>
       </NavigationMenuLink>
     </li>
-  )
-})
-ListItem.displayName = "ListItem"
-
-
-
+  );
+});
+ListItem.displayName = "ListItem";

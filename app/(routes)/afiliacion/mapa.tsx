@@ -9,7 +9,7 @@ const Mapa: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col lg:flex-row px-4 lg:px-20 py-20 gap-4">
+    <div  className="flex flex-col lg:flex-row px-4 lg:px-20 py-20 gap-4">
       <div className="relative w-full lg:w-1/2 h-64 lg:h-96 overflow-hidden rounded-lg shadow-lg transition-transform duration-300 transform hover:scale-105">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d971.2907636581554!2d-74.20727426996872!3d-13.152112876173774!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTPCsDA5JzA3LjciUyA3NMKwMTInMjUuOSJX!5e0!3m2!1ses!2sus!4v1721975726860!5m2!1ses!2sus"

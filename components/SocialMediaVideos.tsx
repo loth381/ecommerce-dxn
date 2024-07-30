@@ -3,84 +3,30 @@
 
 "use client"; 
 
-import { useRef } from "react";
-import { FaFacebook, FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa";
-import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
-import { Autoplay, Navigation, Pagination } from "swiper/modules";
+import { Autoplay, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 
+import { FaFacebook, FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-const posts = [
-  {
-    id: 1,
-    image: "/success.jpg",
-    title: "If you have trouble sleeping..",
-    content:
-      "Try swapping your normal moisturiser for a magnesium cream at night",
-  },
-  {
-    id: 2,
-    video: "",
-    title: "AM VS PM WELLNESS",
-    content: [
-      "CoQ10 to support your natural energy",
-      "Vitamin D for immune health and overall mood",
-      "Probiotic supplement to promote a happy gut",
-    ],
-  },
-  {
-    id: 3,
-    video:
-      "",
-    title: "Signs you need to start using Rosemary shampoo",
-  },
-  {
-    id: 4, // Cambié el ID aquí para evitar duplicados
-    image: "/success.jpg",
-    title: "If you have trouble sleeping..",
-    content:
-      "Try swapping your normal moisturiser for a magnesium cream at night",
-  },
-  {
-    id: 5, // Cambié el ID aquí para evitar duplicados
-    video: "",
-    title: "AM VS PM WELLNESS",
-    content: [
-      "CoQ10 to support your natural energy",
-      "Vitamin D for immune health and overall mood",
-      "Probiotic supplement to promote a happy gut",
-    ],
-  },
-  {
-    id: 6, // Cambié el ID aquí para evitar duplicados
-    video:
-      "",
-    title: "Signs you need to start using Rosemary shampoo",
-  },
+const images = [
+  'https://bavet.eu/assets/uploads/2023/03/BAVET-Teambuilding_Koksijde-2021-66-1450x967.jpg',
+  'https://bavet.eu/assets/uploads/2023/03/BAVET-Teambuilding_Koksijde-2021-52-2-1450x967.jpg',
+  'https://bavet.eu/assets/uploads/2023/03/2022-Bavet-Teambuilding-455-3-1450x967.jpg',
+  'https://bavet.eu/assets/uploads/2023/03/2022-Bavet-Teambuilding-518-1450x967.jpg',
+  'https://bavet.eu/assets/uploads/2023/03/BAVET-Teambuilding_Koksijde-2021-66-1450x967.jpg' // Añadir una imagen extra para el bucle continuo
 ];
 
-const SocialMediaVideos = () => {
-  const swiperRef = useRef<any>(null); // Crear referencia al Swiper
+const SocialMediaVideos : React.FC = () => {
 
-  const handlePrev = () => {
-    if (swiperRef.current) {
-      swiperRef.current.swiper.slidePrev();
-    }
-  };
-
-  const handleNext = () => {
-    if (swiperRef.current) {
-      swiperRef.current.swiper.slideNext();
-    }
-  };
+     
 
   return (
-    <section className="relative w-full py-28 mx-auto my-12 px-2 lg:px-12 overflow-hidden">
-      <div className="flex justify-between items-center mb-6">
+    <section className="relative w-full mx-auto my-8 px-4 overflow-hidden py-16 ">
+       <div className="flex justify-between items-center mb-6 py-3">
         <h2 className="lg:text-4xl  text-2xl font-bold">Nuestras Redes Sociales</h2>
         <div className="flex gap-4">
           <a
@@ -99,7 +45,7 @@ const SocialMediaVideos = () => {
             href="https://www.tiktok.com/@tu_cuenta"
             className="text-3xl text-black dark:text-white"
           >
-            <FaTiktok />
+            <FaTiktok/>
           </a>
           <a
             href="https://www.youtube.com/tu_cuenta"
@@ -109,97 +55,60 @@ const SocialMediaVideos = () => {
           </a>
         </div>
       </div>
-
       <Swiper
-        ref={swiperRef} // Asignar referencia al Swiper
-        modules={[Autoplay, Pagination, Navigation]}
-        spaceBetween={10}
-        slidesPerView={1} // Inicia mostrando 1 slide por defecto
-        loop={true}
-        autoplay={{ delay: 10000, disableOnInteraction: false }}
+        modules={[Autoplay, Pagination]} // Quitamos Navigation
+        spaceBetween={10} // Espacio entre imágenes
+        slidesPerView={1} // Mostrar una imagen a la vez por defecto
+        loop={true} // Hacer el carrusel cíclico
+        autoplay={{ delay: 500, disableOnInteraction: false }} // Desplazar automáticamente cada 0.5 segundos
         pagination={{ clickable: true }}
-        speed={900}
+        speed={9000} // Aumentar la velocidad de la transición
         breakpoints={{
           640: {
-            slidesPerView: 2,
-            spaceBetween: 20,
+            slidesPerView: 1, // Mostrar una imagen a la vez en pantallas pequeñas
+            spaceBetween: 10,
           },
           768: {
-            slidesPerView: 3,
-            spaceBetween: 30,
+            slidesPerView: 2, // Mostrar dos imágenes a la vez en pantallas medianas
+            spaceBetween: 15,
           },
           1024: {
-            slidesPerView: 4,
-            spaceBetween: 40,
+            slidesPerView: 3, // Mostrar tres imágenes a la vez en pantallas grandes
+            spaceBetween: 20,
           },
         }}
-        className="mySwiper "
+        className="mySwiper"
       >
-        {posts.map((post) => (
-          <SwiperSlide key={post.id} >
-            <div className="flex-shrink-0 w-full max-w-md bg-slate-900 rounded-lg shadow-lg overflow-hidden">
-              {post.video ? (
-                <iframe
-                  src={post.video}
-                  title={post.title}
-                  className="w-full h-96"
-                  allowFullScreen
-                ></iframe>
-              ) : (
-                <img
-                  src={post.image}
-                  alt={post.title}
-                  className="w-full h-96 object-cover"
-                />
-              )}
+        {images.map((src, index) => (
+          <SwiperSlide key={index}>
+            <div className="relative w-full h-[300px] md:h-[400px] lg:h-[500px] overflow-hidden rounded-lg shadow-lg transition-transform duration-500 ease-in-out hover:scale-105">
+              <img
+                src={src}
+                alt={`Image ${index + 1}`}
+                className="w-full h-full object-cover"
+              />
             </div>
           </SwiperSlide>
         ))}
-
-        <div className="flex justify-between p-4">
-        <button
-          onClick={handlePrev}
-          className="bg-gray-800  p-3 rounded-full shadow hover:bg-gray-800 transition duration-200 flex items-center justify-center cursor-pointer dark:bg-white dark:hover:bg-white"
-        >
-          <HiChevronLeft className="text-white text-3xl dark:text-black "  />
-        </button>
-        <button
-          onClick={handleNext}
-          className="bg-gray-800  p-3 rounded-full shadow hover:bg-gray-800 transition duration-200 flex items-center justify-center cursor-pointer dark:bg-white dark:hover:bg-white"
-        >
-          <HiChevronRight className="text-white text-3xl dark:text-black" />
-        </button>
-      </div>
       </Swiper>
-
-      
-
       <style jsx>{`
         .mySwiper {
           width: 100%;
           height: auto;
         }
         .swiper-wrapper {
-          transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out; /* Cambia la transición para hacerla más suave */
         }
         .swiper-slide {
           display: flex;
           justify-content: center;
           align-items: center;
         }
-          .swiper-pagination{
-          display: flex;
-
-          }
         .swiper-pagination-bullet {
-          background-color: #000000 !important;
+          background-color: #ffffff;
         }
         .swiper-pagination-bullet-active {
-          background-color: #020200 !important;
-        }
-        .swiper-button-next,
-        .swiper-button-prev {
-          display: none; /* Ocultar botones por defecto */
+          background-color: #007bff;
         }
       `}</style>
     </section>
