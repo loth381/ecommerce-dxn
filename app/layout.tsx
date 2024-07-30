@@ -42,6 +42,8 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="canonical" href="https://dxnayacucho.vercel.app/" />
         <link rel="icon" href="/favicon.ico" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://res.cloudinary.com" />
         <meta
           property="og:title"
           content="DXN Ayacucho | Productos de Salud y Bienestar"
